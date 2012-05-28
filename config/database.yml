@@ -8,7 +8,7 @@ development:
   encoding: utf8
   database: rails_learning
   username: root
-  password: 
+  password: root
   localhost: 127.0.0.1
 
 # Warning: The database defined as "test" will be erased and
@@ -19,7 +19,7 @@ test:
   encoding: utf8
   database: rails_learning_test
   username: root
-  password: 
+  password: root
 
 
 production:
@@ -27,6 +27,6 @@ production:
   encoding: utf8
   database: rails_learning_production
   username: root
-  password: 
+  password: root
 
 

@@ -1,4 +1,8 @@
 Demo::Application.routes.draw do
+  resources :products
+
+  get "say/goodbye"
+
   resources :people, :events
 
   root :to => "welcome#index"
