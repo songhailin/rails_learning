@@ -1,0 +1,11 @@
+<table>
+  <% for product in @products %>
+    <tr>
+      <td><%= product.title %></td>
+      <td><%= image_tag product.image_url %></td>
+      <td><%= product.description.html_safe %></td>
+      <td><%= number_to_currency(product.price) %></td>
+      <td><%= button_to 'Add to cart' %></td>
+    </tr>
+  <% end %>
+</table>

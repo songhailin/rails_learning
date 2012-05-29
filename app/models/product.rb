@@ -1,4 +1,9 @@
 class Product < ActiveRecord::Base
+
+  def self.find_products_by_sale
+    find(:all,:order=>"title")
+  end
+
   validates_presence_of :title,:description,:image_url
   validates_numericality_of :price
   validates_uniqueness_of :title   #title 唯一
