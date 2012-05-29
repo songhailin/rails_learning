@@ -4,3 +4,7 @@
 
 table,table td
 {border:1px solid #000;border-collapse:collapse;}
+table tr.odd td
+{background:#ccc;}
+table tr.even td
+{background:#f5fbdb;}
