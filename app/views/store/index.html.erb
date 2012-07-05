@@ -5,7 +5,15 @@
       <td><%= image_tag product.image_url %></td>
       <td><%= product.description.html_safe %></td>
       <td><%= number_to_currency(product.price) %></td>
-      <td><%= button_to 'Add to cart' ,:action=>'add_to_cart',:id=>product%></td>
+      <td>
+
+        <% form_remote_tag :url => {:controller => '/post', :action => :add_to_cart},
+          :html => {:action => {:controller => '/post', :action => :add_to_cart, :id => product}} do %>
+          <%= text_field_tag :first_name %>
+          <%= submit_tag 'Add to Cart' -%>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
+

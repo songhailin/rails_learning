@@ -1,6 +1,9 @@
-<h2>Your pragmatic cart</h2>
-<ul>
-  <% for item in @cart.items %>
-    <li><%= h item.title %></li>
-  <% end %>
-</ul>
+<h2>Your cart</h2>
+<table>
+    <%= render(:partial=>"cart_item",:collection=>@cart.items)  %>
+  <tr>
+    <td colspan="2">total</td>
+    <td><%= @cart.total_price %></td>
+  </tr>
+</table>
+<%= button_to "empty cart",:action=>"empty_cart" %>
