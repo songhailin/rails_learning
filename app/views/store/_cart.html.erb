@@ -1,12 +1,20 @@
 <% unless cart.items.empty? %>
-  <h2>Your cart</h2>
-  <table>
-    <%= render(:partial=>"cart_item",:collection=>cart.items)  %>
-    <tr>
-      <td colspan="2">total</td>
-      <td><%= cart.total_price %></td>
-    </tr>
-  </table>
-  <%= button_to "checkout",:action=>"checkout" %>
-  <%= button_to "empty cart",:action=>"empty_cart" %>
+  <div style="margin-bottom:50px;">
+    <h2>Your cart</h2>
+    <table width="100%">
+      <tr>
+        <th>title</th>
+        <th>quantity</th>
+        <th>price</th>
+      </tr>
+      <%= render(:partial=>"cart_item",:collection=>cart.items)  %>
+      <tr>
+        <td colspan="2">total</td>
+        <td><%= cart.total_price %></td>
+      </tr>
+      <tr>
+        <td colspan="3"><%= button_to "checkout",:action=>"checkout" %><%= button_to "empty cart",:action=>"empty_cart" %></td>
+      </tr>
+    </table>
+  </div>
 <% end %>

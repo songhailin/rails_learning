@@ -1,11 +1,10 @@
-<% for item in @cart.items %>
-  <% if cart_item == @current_item %>
-    <tr id="highlight">
-    <% else %>
-    <tr>
-    <% end %>
-    <td><%= h item.title %></td>
-    <td><%= h item.quantity %></td>
-    <td><%= item.price %></td>
-  </tr>
-<% end %>
+
+<% if cart_item == @current_item %>
+  <tr id="current_item">
+  <% else %>
+  <tr>
+  <% end %>
+  <td><%= h cart_item.title %></td>
+  <td><%= h cart_item.quantity %></td>
+  <td><%= cart_item.price %></td>
+</tr>
