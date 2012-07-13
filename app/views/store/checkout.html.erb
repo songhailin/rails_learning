@@ -1,0 +1,39 @@
+<style type="text/css">
+  label{display:block;float:left;width:100px;}
+</style>
+<div>
+
+  <%= errors_for(@order, "Opps, unable to checkout the order").html_safe %>
+  
+  <h2>Order infos</h2>
+
+  <%= form_for :order,:url=>{:action => :save_order} do |form| %>
+    <fieldset>
+
+      <legend>please enter your details</legend>
+
+      <div>
+        <%= form.label :name,'Name:' %>
+        <%= form.text_field :name,:size=>40 %>
+      </div>
+
+      <div>
+        <%= form.label :address,'Address' %>
+        <%= form.text_area :address,:rows=>3,:cols=>40 %>
+      </div>
+
+      <div>
+        <%= form.label :email,'E-mail' %>
+        <%= form.text_field :email,:size=>40 %>
+      </div>
+
+      <div>
+        <%= form.label :pay_type,'pay with' %>
+        <%= form.select :pay_type,Order::PAYMENT_TYPES,:prompt=>'select a payment method'%>
+      </div>
+
+      <%= submit_tag "place order",:class=>'submit' %>
+
+    </fieldset>
+  <% end %>
+</div>

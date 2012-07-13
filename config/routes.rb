@@ -1,9 +1,11 @@
 Demo::Application.routes.draw do
 
+  #get "info/who_boutht"
+
+  resources :users
+
   resources :products
   resources :people, :events
-
-  resources :store
 
   root :to => "welcome#index"
   get "welcome/say_hello" => "welcome#say"
