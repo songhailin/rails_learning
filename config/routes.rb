@@ -1,5 +1,7 @@
 Demo::Application.routes.draw do
 
+  resources :articles
+
   #get "info/who_boutht"
 
   resources :users
